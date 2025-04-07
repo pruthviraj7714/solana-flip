@@ -29,7 +29,7 @@ export default function Home() {
         </nav>
         <div className="flex items-center gap-4">
           <Link
-            href="/app"
+            href="/connect-wallet"
             className="inline-flex h-9 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-yellow-500 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-gradient-to-r hover:from-purple-700 hover:to-yellow-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             Launch App
@@ -55,7 +55,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
-                    href="/app"
+                    href="/connect-wallet"
                     className="inline-flex h-10 items-center justify-center rounded-md bg-yellow-500 px-8 text-sm font-medium text-black shadow transition-colors hover:bg-yellow-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                   >
                     Start Flipping
@@ -364,7 +364,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link
-                  href="/app"
+                  href="/connect-wallet"
                   className="inline-flex h-10 items-center justify-center rounded-md bg-yellow-500 px-8 text-sm font-medium text-black shadow transition-colors hover:bg-yellow-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                 >
                   Launch App
