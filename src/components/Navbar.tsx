@@ -10,7 +10,7 @@ export default function Navbar() {
 
   const router = useRouter();
   return (
-    <div className="px-4 lg:px-6 h-16 flex items-center justify-between border-b border-zinc-800">
+    <div className="px-4 lg:px-6 h-16 flex items-center justify-between border-b bg-black text-white border-zinc-800">
       <div
         onClick={() => router.push("/home")}
         className="flex items-center gap-2"
