@@ -226,52 +226,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="demo" className="w-full py-12 md:py-24 lg:py-32 bg-zinc-950">
-          <div className="px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Try a Demo Flip</h2>
-                <p className="max-w-[900px] text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Experience how Solana Flip works with this interactive demo.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto max-w-md py-12">
-              <Tabs defaultValue="heads" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 bg-zinc-900">
-                  <TabsTrigger value="heads">Heads</TabsTrigger>
-                  <TabsTrigger value="tails">Tails</TabsTrigger>
-                </TabsList>
-                <div className="mt-6 space-y-4">
-                  <div className="flex justify-center">
-                    <div className="w-32 h-32 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-300 flex items-center justify-center shadow-[0_0_30px_rgba(234,179,8,0.3)]">
-                      <CoinIcon className="w-16 h-16 text-black" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-zinc-400">
-                        SOL
-                      </div>
-                      <input
-                        type="number"
-                        className="block w-full p-4 pl-12 bg-zinc-900 border border-zinc-800 rounded-lg text-white"
-                        placeholder="0.1"
-                        min="0.01"
-                        step="0.01"
-                      />
-                    </div>
-                  </div>
-                  <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600">Flip Coin (Demo)</Button>
-                  <p className="text-xs text-zinc-400 text-center">
-                    This is a demo only. Connect your wallet to play for real SOL.
-                  </p>
-                </div>
-              </Tabs>
-            </div>
-          </div>
-        </section>
-
         <section id="faq" className="w-full py-12 md:py-24 lg:py-32 bg-black">
           <div className="px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
