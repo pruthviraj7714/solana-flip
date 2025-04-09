@@ -44,8 +44,9 @@ export async function POST(req: NextRequest) {
     const lamports =
       txDetails?.meta?.preBalances[0]! - txDetails?.meta?.postBalances[0]!;
 
+    const totalPayout = 2 * lamports;
     const finalAmountAfterPlatformFee =
-      lamports - (lamports * PLATFORM_FEES) / 100;
+      totalPayout - (totalPayout * PLATFORM_FEES) / 100;
 
     let flipResult = Math.random() > 0.5 ? "heads" : "tails";
     const user = await prisma.user.findUnique({
