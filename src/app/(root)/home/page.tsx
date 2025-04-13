@@ -3,7 +3,7 @@
 import type React from "react";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { CoinsIcon } from "lucide-react";
+import { AlertTriangleIcon, CoinsIcon, LucideLoader } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -69,6 +69,14 @@ export default function Home() {
       amountSelectSoundRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (isFlipping) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isFlipping]);
 
   const playSoundEffect = (ref: React.RefObject<HTMLAudioElement>) => {
     if (ref.current) {
@@ -150,10 +158,9 @@ export default function Home() {
         ))}
       </div>
       <div className="absolute top-16 left-1/2 -translate-x-1/2 text-sm text-amber-300 bg-amber-900/20 px-4 py-2 rounded-full shadow-md font-mono">
-          ⚠️ Just for fun on Devnet — play, enjoy, and go wild!
-        </div>
+        ⚠️ Just for fun on Devnet — play, enjoy, and go wild!
+      </div>
       <div className="relative flex items-center justify-center min-h-[80vh]">
-        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -373,6 +380,22 @@ export default function Home() {
         </motion.div>
       </div>
 
+      {isFlipping && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div className="w-[90%] max-w-md backdrop-blur-2xl shadow-2xl border border-gray-700 rounded-2xl px-6 py-8 flex flex-col items-center gap-6">
+            <div className="text-white text-lg font-semibold text-center">
+              Flipping the coin...
+            </div>
+            <LucideLoader className="animate-spin text-white w-6 h-6" />
+            <div className="flex items-center gap-1 text-sm text-red-400 text-center">
+              <AlertTriangleIcon className="w-6 h-6 text-red-500" />
+              <span>
+                Please don't close or refresh the app. fetching results....
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
       <AnimatePresence>
         {showResultDialog && (
           <Dialog open={showResultDialog} onOpenChange={closeResultDialog}>
